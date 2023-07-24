@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: "postgres:14.4"
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+    volumes:
+      - ./.data:/var/lib/postgresql/data
+  python_server:
+    image: "demo_python_server"
+    container_name: demo_python_server
+    ports:
+      - 5001:5001
+  vue_frontend:
+    image: "demo_vue_frontend"
+    container_name: "demo_vue_frontend"
+    ports:
+      - 3000:3000
+networks:
+  my_network:
+    driver: bridge
