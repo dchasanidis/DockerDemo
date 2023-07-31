@@ -1,4 +1,4 @@
-# DockerfileDemo
+# DockerDemo
 
 A PoC project created for education reasons
 
